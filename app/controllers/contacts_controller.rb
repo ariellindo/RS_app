@@ -1,5 +1,3 @@
-require 'pry'
-
 class ContactsController < ApplicationController
   respond_to :json
 
@@ -32,5 +30,11 @@ class ContactsController < ApplicationController
       @contact.update_attributes(contact_type: params[:contact_type])
       respond_with @contact
     end
+  end
+
+  def create
+    @contact = Contact.new(params[:contact_type])
+    @contact.save
+    respond_with @contact
   end
 end

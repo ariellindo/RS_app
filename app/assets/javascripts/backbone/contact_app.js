@@ -9,5 +9,4 @@ window.ContactApp = {
   Collections: {},
   Routers: {},
   Views: {}
-	
 }

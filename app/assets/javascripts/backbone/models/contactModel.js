@@ -1,3 +1,16 @@
 ContactApp.Models.contact = Backbone.Model.extend({
-	url: '/contacts/last'
+	default: {
+		contact_type: 'Aquaintace'
+	}
+});
+
+ContactApp.Collections.contacts = Backbone.Collection.extend({
+	model: ContactApp.Models.contact,
+	url: '/contacts',
+
+	parse: function(){
+		debugger;
+		return response;
+	}
+
 });

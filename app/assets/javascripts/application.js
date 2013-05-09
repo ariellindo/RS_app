@@ -21,8 +21,13 @@
 
 $(function(){
 
-	var appView = new ContactApp.Views.ContactView({ model: new ContactApp.Models.contact() });
-	$('#app').html(appView.render().el);
+	var contacts = new ContactApp.Views.ContactListView();
+
+
+	contacts.setElement("#app").render();
+
 
 	Backbone.history.start();
+
+
 });

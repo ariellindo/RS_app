@@ -1,21 +1,14 @@
-# require 'pry'
-
 class ContactsController < ApplicationController
   respond_to :json
 
-
-  # GET /contacts
   # GET /contacts.json
   def index
     headers['Last-Modified'] = Time.now.httpdate
-    # binding.pry
-
     populateDB
     @contacts = Contact.all
     respond_with @contacts
   end
 
-  # GET /contacts/1
   # GET /contacts/1.json
   def show
     headers['Last-Modified'] = Time.now.httpdate
@@ -37,10 +30,9 @@ class ContactsController < ApplicationController
 
 
   private
-  #test data
 
+  #test data
   def populateDB
-    # binding.pry
     if Contact.count == 0
       0.upto(5) { Contact.new(contact_type: "").save }
     end

@@ -1,4 +1,5 @@
 ContactApp.Views.ContactView = Backbone.View.extend({
+	tagName: 'tr',
 
 	initialize: function(options){
 		this.model = options.model;
@@ -21,7 +22,7 @@ ContactApp.Views.ContactView = Backbone.View.extend({
 		if(!this.selView){
 			this.selView = new ContactApp.Views.SelectView();
 		}
-		this.$("#contact-type").html(this.selView.render().el);
+		this.$(".contact-type").html(this.selView.render().el);
 
 		return false;
 	},

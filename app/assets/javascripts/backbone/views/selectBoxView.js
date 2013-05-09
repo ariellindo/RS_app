@@ -1,4 +1,5 @@
 ContactApp.Views.SelectView = Backbone.View.extend({
+
 	initialize: function(){
 		this.list = [
 									{ contact_type: "Bussiness" },

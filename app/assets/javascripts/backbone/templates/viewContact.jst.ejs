@@ -1,13 +1,14 @@
-<div class="form-horizontal">
-	<div class="control-group">
-		<label class="control-label">Joe: </label>
-		<div class="controls" id="contact-type">
-			<%= (model.get('contact_type'))? model.get('contact_type') : "Unset"  %>
-		</div>
-	</div>
-	<div class="form-actions ">
-		<a href="#" class="btn btn-primary edit">Edit</a>
-		<a href="#" class="btn btn-primary save hide">Save</a>
-		<a href="#" class="btn cancel hide">Cancel</a>
-	</div>
-</div>
+<td>
+	Joe
+</td>
+<td class="contact-type">
+	<%= (model.get('contact_type'))? model.get('contact_type') : "Unset"  %>
+</td>
+<td>
+
+</td>
+<td>
+	<a href="#" class="btn btn-primary edit">Edit</a>
+	<a href="#" class="btn btn-primary save hide">Save</a>
+	<a href="#" class="btn cancel hide">Cancel</a>
+</td>

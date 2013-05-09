@@ -34,6 +34,7 @@ ContactApp.Views.ContactView = Backbone.View.extend({
 		var selValue = this.$('#type-list').val();
 		this.model.set( "contact_type", selValue );
 		this.model.save();
+		this.render();
 
 		return false;
 	},

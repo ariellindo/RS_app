@@ -1,3 +1,5 @@
+# require 'pry'
+
 class ContactsController < ApplicationController
   respond_to :json
 
@@ -6,25 +8,23 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     headers['Last-Modified'] = Time.now.httpdate
+    # binding.pry
+
+    populateDB
     @contacts = Contact.all
     respond_with @contacts
   end
 
-  # GET /contacts/last
-  # GET /contacts/last.json
+  # GET /contacts/1
+  # GET /contacts/1.json
   def show
     headers['Last-Modified'] = Time.now.httpdate
-    begin
-      @contact = Contact.find(params[:id])
-      respond_with @contact
-    rescue Exception => e
-      respond_with "{}"
-    end
+    @contact = Contact.find(params[:id])
+    respond_with @contact
   end
 
   def update
-    @contact = Contact.last
-
+    @contact = Contact.find(params[:id])
     @contact.update_attributes(contact_type: params[:contact_type])
     respond_with @contact
   end
@@ -33,5 +33,16 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.save
     respond_with @contact
+  end
+
+
+  private
+  #test data
+
+  def populateDB
+    # binding.pry
+    if Contact.count == 0
+      0.upto(5) { Contact.new(contact_type: "").save }
+    end
   end
 end

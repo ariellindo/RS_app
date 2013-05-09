@@ -21,12 +21,9 @@
 
 $(function(){
 
+
 	var contacts = new ContactApp.Views.ContactListView();
-
-
 	contacts.setElement("#app").render();
-
-
 	Backbone.history.start();
 
 

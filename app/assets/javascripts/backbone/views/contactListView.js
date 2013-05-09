@@ -5,7 +5,7 @@ ContactApp.Views.ContactListView = Backbone.View.extend({
 		this.contactList = new ContactApp.Collections.contacts();
 		this.contactViews = [];
 
-		this.contactList.on("all", this.refresh, this);
+		this.contactList.on("reset", this.refresh, this);
 	},
 
 	refresh: function(){
@@ -23,7 +23,7 @@ ContactApp.Views.ContactListView = Backbone.View.extend({
 
 	render: function(){
 		var self = this;
-		this.contactList.fetch({reset:true});
+		this.contactList.fetch();
 
 		return this;
 	}

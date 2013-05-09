@@ -8,8 +8,7 @@ ContactApp.Collections.contacts = Backbone.Collection.extend({
 	model: ContactApp.Models.contact,
 	url: '/contacts',
 
-	parse: function(){
-		debugger;
+	parse: function(response){
 		return response;
 	}
 

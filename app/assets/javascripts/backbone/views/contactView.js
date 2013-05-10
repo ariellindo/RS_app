@@ -19,10 +19,16 @@ ContactApp.Views.ContactView = Backbone.View.extend({
 		this.$(".btn.edit").addClass('hide');
 		this.$("#type").addClass('hide');
 
+		var typeTxt = this.$(".contact-type").text().split("\n")[1].trim();
+
 		if(!this.selView){
-			this.selView = new ContactApp.Views.SelectView();
+			this.selView = new ContactApp.Views.SelectView( {contact_type: typeTxt});
+		}else{
+			this.selView.selection = typeTxt;
 		}
+
 		this.$(".contact-type").html(this.selView.render().el);
+		// this.render();
 
 		return false;
 	},

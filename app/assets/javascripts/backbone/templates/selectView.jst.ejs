@@ -1,5 +1,5 @@
 <select name="contact-type" id="type-list">
 	<% _.each(list, function(value){ %>
-		<option value="<%= value.contact_type	%>"><%= value.contact_type	%></option>
+		<option value="<%= value.contact_type	%>" <% if(value.contact_type === select){ %> selected <% } %>><%= value.contact_type	%></option>
 	<%	}); %>
 </select>
